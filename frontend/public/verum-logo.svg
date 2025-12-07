@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="40" viewBox="0 0 220 40" role="img" aria-label="Verum App logo">
+  <defs>
+    <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="100%">
+      <stop offset="0%" stop-color="#ff3e9d"/>
+      <stop offset="100%" stop-color="#ff2e8f"/>
+    </linearGradient>
+  </defs>
+  <rect width="220" height="40" fill="transparent" />
+  <!-- pink check-like shape -->
+  <g transform="translate(6,6)">
+    <path d="M10 2 L22 14 L46 -10 L58 2 L22 38 Z" fill="url(#g1)" transform="rotate(15 30 15)" opacity="1" />
+  </g>
+  <!-- cyan small diamond -->
+  <rect x="2" y="2" width="10" height="10" rx="3" ry="3" fill="#00e6f0" transform="rotate(-15 7 7)" />
+  <!-- text -->
+  <g transform="translate(80,26)">
+    <text x="0" y="0" font-family="Helvetica, Arial, sans-serif" font-size="18" font-weight="700" fill="#111827">Verum</text>
+    <text x="62" y="0" font-family="Helvetica, Arial, sans-serif" font-size="12" fill="#6b7280">App</text>
+  </g>
+</svg>
