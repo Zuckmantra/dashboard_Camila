@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends, HTTPException, Request, status, Response
 from sqlalchemy.orm import Session
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import List, Optional, Dict
 from fastapi.responses import JSONResponse
 from datetime import datetime
@@ -271,14 +271,13 @@ class ClienteCreate(ClienteBase):
     pass
 
 class ClienteResponse(ClienteBase):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     estado: str
     tasa_conversion: float
     satisfaccion: float
     fecha_registro: datetime
-
-    class Config:
-        from_attributes = True
 
 class DashboardStats(BaseModel):
     conversaciones_total: int
