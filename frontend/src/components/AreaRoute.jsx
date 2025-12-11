@@ -11,7 +11,8 @@ const AreaRoute = ({ allowedAreas = [], children }) => {
     const area = (user.area || user.area === 0) ? String(user.area).toUpperCase() : '';
     const allowed = allowedAreas.map(a => String(a).toUpperCase());
 
-    if (!allowed.includes(area)) {
+    // Permitir acceso a TI, Admin y Comercial
+    if (!allowed.includes(area) && area !== 'COMERCIAL') {
         return <Navigate to="/clients" replace />;
     }
 

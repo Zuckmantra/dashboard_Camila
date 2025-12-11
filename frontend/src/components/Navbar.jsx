@@ -19,30 +19,28 @@ const Navbar = () => {
                     </div>
                 </div>
 
-                    <div className="flex space-x-6">
-                        {(!user || (user && (user.area || '').toString().toUpperCase() !== 'COMERCIAL')) && (
+                        <div className="flex space-x-6">
                             <Link
                                 to="/dashboard"
                                 className={`hover:text-cyan-600 transition-colors ${isActive('/dashboard') ? 'text-cyan-600 font-semibold' : 'text-gray-800'}`}
                             >
                                 Dashboard
                             </Link>
-                        )}
-                        <Link
-                            to="/clients"
-                            className={`hover:text-cyan-600 transition-colors ${isActive('/clients') ? 'text-cyan-600 font-semibold' : 'text-gray-800'}`}
-                        >
-                            Clientes
-                        </Link>
-                        {(!user || (user && (user.area || '').toString().toUpperCase() !== 'COMERCIAL')) && (
                             <Link
-                                to="/chat-history"
-                                className={`hover:text-cyan-600 transition-colors ${isActive('/chat-history') ? 'text-cyan-600 font-semibold' : 'text-gray-800'}`}
+                                to="/clients"
+                                className={`hover:text-cyan-600 transition-colors ${isActive('/clients') ? 'text-cyan-600 font-semibold' : 'text-gray-800'}`}
                             >
-                                Historial Chats
+                                Clientes
                             </Link>
-                        )}
-                    </div>
+                            {(!user || (user && (user.area || '').toString().toUpperCase() !== 'COMERCIAL')) && (
+                                <Link
+                                    to="/chat-history"
+                                    className={`hover:text-cyan-600 transition-colors ${isActive('/chat-history') ? 'text-cyan-600 font-semibold' : 'text-gray-800'}`}
+                                >
+                                    Historial Chats
+                                </Link>
+                            )}
+                        </div>
             </div>
 
             <div className="flex items-center space-x-4">

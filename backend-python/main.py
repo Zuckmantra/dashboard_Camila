@@ -289,7 +289,7 @@ class DashboardStats(BaseModel):
 @app.get("/api/dashboard/stats")
 def get_dashboard_stats(limit: int = 10, current_user: dict = Depends(get_current_user)):
     user_area = (current_user.get("area") or "").upper()
-    if user_area not in ("TI", "ADMIN"):
+    if user_area not in ("TI", "ADMIN", "COMERCIAL"):
         raise HTTPException(status_code=403, detail="No autorizado para ver el dashboard")
 
     session = DBSessionLocal()
@@ -315,7 +315,7 @@ def get_dashboard_stats(limit: int = 10, current_user: dict = Depends(get_curren
 @app.get("/api/dashboard/charts")
 def get_dashboard_charts(period: str = 'day', days: int = 7, month: int | None = None, year: int | None = None, current_user: dict = Depends(get_current_user)):
     user_area = (current_user.get("area") or "").upper()
-    if user_area not in ("TI", "ADMIN"):
+    if user_area not in ("TI", "ADMIN", "COMERCIAL"):
         raise HTTPException(status_code=403, detail="No autorizado para ver el dashboard")
 
     from database import connect_postgres
