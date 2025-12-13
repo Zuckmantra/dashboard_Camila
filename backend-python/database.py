@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import psycopg2
 import psycopg2.extras
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.engine import make_url
 
